@@ -1,0 +1,7 @@
+playwright
+pandas
+gspread
+oauth2client
+python-dotenv
+schedule
+requests
