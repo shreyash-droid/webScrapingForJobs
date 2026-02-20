@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Google Credentials
+config/credentials.json
+
+# IDEs
+.vscode/
+.idea/
+
+# Data
+*.csv
+*.xlsx

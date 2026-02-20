@@ -1,0 +1,46 @@
+2026-02-20 23:35:25,024 - job_automation - INFO - Job Automation System Initialized.
+2026-02-20 23:35:25,024 - job_automation - INFO - Automation cycle started...
+2026-02-20 23:35:25,025 - job_automation - INFO - Scraping completed. Found mock data for initialization.
+2026-02-20 23:35:26,188 - job_automation - INFO - Successfully authenticated with Google Sheets.
+2026-02-20 23:35:26,677 - job_automation - INFO - Successfully appended 2 rows to Google Sheets.
+2026-02-20 23:35:26,677 - job_automation - INFO - Automation cycle finished.
+2026-02-20 23:35:26,677 - job_automation - INFO - Scheduled to run every 60 minutes.
+2026-02-21 00:05:39,077 - job_automation - INFO - ==================================================
+2026-02-21 00:05:39,085 - job_automation - INFO - Starting Job Automation Cycle
+2026-02-21 00:05:39,085 - job_automation - INFO - ==================================================
+2026-02-21 00:05:39,085 - job_automation - INFO - Running scraper: RemoteOK
+2026-02-21 00:05:39,085 - job_automation - INFO - Starting scraper: RemoteOK
+2026-02-21 00:05:40,627 - job_automation - INFO - Navigating to https://remoteok.com/remote-internship-jobs
+2026-02-21 00:05:50,269 - job_automation - INFO - Successfully fetched 17 jobs from RemoteOK
+2026-02-21 00:05:50,269 - job_automation - INFO - Running scraper: Remotive
+2026-02-21 00:05:50,269 - job_automation - INFO - Starting scraper: Remotive
+2026-02-21 00:05:50,940 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/internship
+2026-02-21 00:06:04,127 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-02-21 00:06:04,127 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-02-21 00:06:04,127 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-02-21 00:06:04,831 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search?term=internship
+2026-02-21 00:06:34,835 - job_automation - ERROR - Error during scraping with WeWorkRemotely: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://weworkremotely.com/remote-jobs/search?term=internship", waiting until "networkidle"
+
+2026-02-21 00:06:34,993 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-02-21 00:06:34,993 - job_automation - INFO - Running scraper: Wellfound
+2026-02-21 00:06:34,993 - job_automation - INFO - Starting scraper: Wellfound
+2026-02-21 00:06:35,665 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/internship/remote
+2026-02-21 00:06:44,028 - job_automation - WARNING - No job elements found on Wellfound. Possible bot block or selector change.
+2026-02-21 00:06:44,152 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-02-21 00:06:44,152 - job_automation - INFO - Running scraper: YC Jobs
+2026-02-21 00:06:44,153 - job_automation - INFO - Starting scraper: YC Jobs
+2026-02-21 00:06:44,804 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs?job_type=internship
+2026-02-21 00:07:07,355 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-02-21 00:07:07,356 - job_automation - INFO - Filtering 17 raw listings...
+2026-02-21 00:07:07,378 - job_automation - INFO - Filtered out 15 irrelevant roles. remaining: 2
+2026-02-21 00:07:07,378 - job_automation - INFO - Applying scoring and local deduplication...
+2026-02-21 00:07:07,388 - job_automation - INFO - Sending notifications for top opportunities...
+2026-02-21 00:07:08,333 - job_automation - INFO - Telegram notification sent successfully.
+2026-02-21 00:07:08,333 - job_automation - INFO - Syncing with Google Sheets Tracker...
+2026-02-21 00:07:11,358 - job_automation - INFO - Created new sheet: Internship Tracker
+2026-02-21 00:07:12,212 - job_automation - INFO - Successfully added 2 new unique jobs to Google Sheets.
+2026-02-21 00:07:12,212 - job_automation - INFO - Cycle completed successfully.
+2026-02-21 00:07:12,212 - job_automation - INFO - Scheduling daily automation at 10:00
+2026-02-21 00:07:48,680 - job_automation - INFO - Automation stopped by user.

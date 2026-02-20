@@ -1,61 +1,62 @@
-from playwright.async_api import async_playwright
-import asyncio
-import random
+import time
 from scraper.base_scraper import BaseScraper
 from utils.logger import logger
 
 class WeWorkRemotelyScraper(BaseScraper):
     def __init__(self):
         super().__init__("WeWorkRemotely")
-        self.url = "https://weworkremotely.com/"
+        self.base_url = "https://weworkremotely.com/remote-jobs/search?term=internship"
 
-    async def scrape(self):
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            page = await browser.new_page(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-            )
-            
-            logger.info(f"Navigating to {self.url}")
-            await page.goto(self.url, wait_until="networkidle")
-            
-            jobs = []
-            # WWR structure: sections for categories, each containing an <ul> with <li> jobs
-            sections = await page.query_selector_all("section.jobs")
-            
-            for section in sections:
-                rows = await section.query_selector_all("li:not(.view-all)")
-                for row in rows:
-                    try:
-                        role = await row.query_selector("span.title")
-                        company = await row.query_selector("span.company")
-                        location = await row.query_selector("span.region")
-                        date_element = await row.query_selector("span.date")
-                        
-                        # Apply link is in the <a> tag within the row
-                        link_element = await row.query_selector("a[href^='/remote-jobs/']")
-                        apply_link = await link_element.get_attribute("href") if link_element else None
+    def scrape(self, page):
+        logger.info(f"Navigating to {self.base_url}")
+        page.goto(self.base_url, wait_until="networkidle")
+        
+        time.sleep(2)
+        
+        jobs = []
+        # WWR jobs are in list items <li> within a section
+        job_elements = page.query_selector_all("section.jobs article ul li:not(.view-all)")
+        
+        for el in job_elements:
+            try:
+                # Some <li> might be headers or dividers
+                if not el.query_selector(".title"):
+                    continue
+                    
+                role_el = el.query_selector(".title")
+                role = role_el.inner_text().strip() if role_el else "N/A"
+                
+                company_el = el.query_selector(".company")
+                company = company_el.inner_text().strip() if company_el else "N/A"
+                
+                region_el = el.query_selector(".region")
+                location = region_el.inner_text().strip() if region_el else "Remote"
+                
+                # Apply link
+                link_els = el.query_selector_all("a")
+                # Usually there are two links, one for the whole item
+                apply_link = "N/A"
+                for link in link_els:
+                    href = link.get_attribute("href")
+                    if href and "/remote-jobs/" in href:
+                        apply_link = f"https://weworkremotely.com{href}"
+                        break
+                
+                # Date
+                date_el = el.query_selector("time")
+                date = date_el.get_attribute("datetime") if date_el else "N/A"
 
-                        job_data = {
-                            "company": (await company.inner_text()).strip() if company else "N/A",
-                            "role": (await role.inner_text()).strip() if role else "N/A",
-                            "location": (await location.inner_text()).strip() if location else "Remote",
-                            "tags": [], # Category is usually the parent section header
-                            "apply_link": f"https://weworkremotely.com{apply_link}" if apply_link else self.url,
-                            "date": (await date_element.inner_text()).strip() if date_element else "N/A"
-                        }
-                        jobs.append(job_data)
-                    except Exception as e:
-                        logger.warning(f"Failed to parse a row in WWR: {e}")
+                jobs.append({
+                    "Company": company,
+                    "Role": role,
+                    "Location": location,
+                    "Tags": "Internship", # Fixed tag based on search
+                    "Apply Link": apply_link,
+                    "Date": date,
+                    "Source": "WeWorkRemotely"
+                })
+            except Exception as e:
+                logger.error(f"Error parsing a job item in WeWorkRemotely: {e}")
+                continue
 
-            await browser.close()
-            logger.info(f"Extracted {len(jobs)} jobs from WeWorkRemotely")
-            return jobs
-
-    def run(self):
-        return asyncio.run(self.scrape())
-
-if __name__ == "__main__":
-    scraper = WeWorkRemotelyScraper()
-    results = scraper.run()
-    print(results[:2])
+        return jobs

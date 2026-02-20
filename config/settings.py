@@ -1,12 +1,22 @@
 import os
 from dotenv import load_dotenv
 
+# Load .env file
 load_dotenv()
 
-class Config:
-    GOOGLE_SHEETS_CREDENTIALS = os.getenv("GOOGLE_SHEETS_CREDENTIALS_JSON", "config/credentials.json")
-    GOOGLE_SHEET_ID = os.getenv("GOOGLE_SHEET_ID")
-    HEADLESS = os.getenv("HEADLESS", "True").lower() == "true"
-    SCRAPE_INTERVAL = int(os.getenv("SCRAPE_INTERVAL_MINUTES", 60))
+class Settings:
+    # Google Sheets
+    GOOGLE_SHEETS_CREDENTIAL_FILE = os.getenv("GOOGLE_SHEETS_CREDENTIAL_FILE", "config/credentials.json")
+    SPREADSHEET_ID = os.getenv("SPREADSHEET_ID")
 
-config = Config()
+    # Scraper
+    SCRAPE_INTERVAL_MINUTES = int(os.getenv("SCRAPE_INTERVAL_MINUTES", "60"))
+
+    # Logging
+    LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
+    # Telegram
+    TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+    TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+settings = Settings()
