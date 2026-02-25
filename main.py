@@ -17,6 +17,7 @@ from scraper.remotive import RemotiveScraper
 from scraper.weworkremotely import WeWorkRemotelyScraper
 from scraper.wellfound import WellfoundScraper
 from scraper.yc_jobs import YCJobsScraper
+from scraper.indeed import IndeedScraper
 from scraper.base_scraper import BaseScraper
 
 class JobAutomationOrchestrator:
@@ -31,7 +32,8 @@ class JobAutomationOrchestrator:
             RemotiveScraper(),
             WeWorkRemotelyScraper(),
             WellfoundScraper(),
-            YCJobsScraper()
+            YCJobsScraper(),
+            IndeedScraper()
         ]
 
     def run_cycle(self):
