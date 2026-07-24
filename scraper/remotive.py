@@ -1,55 +1,37 @@
-import time
 from scraper.base_scraper import BaseScraper
 from utils.logger import logger
 
+
 class RemotiveScraper(BaseScraper):
+    """
+    Pulls jobs from Remotive's public JSON API.
+
+    Note: Remotive's free API currently ignores the `category`/`search`/`limit`
+    parameters and just returns the latest listings, so we fetch the default feed
+    once and let our own title filter select the relevant design/frontend/PM roles.
+    """
+
     def __init__(self):
         super().__init__("Remotive")
-        self.base_url = "https://remotive.com/remote-jobs/internship"
+        self.api_url = "https://remotive.com/api/remote-jobs"
 
-    def scrape(self, page):
-        logger.info(f"Navigating to {self.base_url}")
-        page.goto(self.base_url, wait_until="networkidle")
-        
-        time.sleep(2)
-        
+    def scrape(self):
+        logger.info(f"Fetching {self.api_url}")
+        payload = self.fetch(self.api_url).json()
+
         jobs = []
-        # Remotive jobs are often in a list with specific classes
-        job_elements = page.query_selector_all(".job-list-item")
-        
-        for el in job_elements:
-            try:
-                role_el = el.query_selector(".job-tile-title")
-                role = role_el.inner_text().strip() if role_el else "N/A"
-                
-                company_el = el.query_selector(".job-tile-info span:first-child")
-                company = company_el.inner_text().strip() if company_el else "N/A"
-                
-                location_el = el.query_selector(".job-tile-location")
-                location = location_el.inner_text().strip() if location_el else "Remote"
-                
-                # Tags
-                tags = [tag.inner_text().strip() for tag in el.query_selector_all(".remotive-tag")]
-                
-                # Apply link - usually the parent <a> or a specific link
-                link_el = el.query_selector("a")
-                apply_link = f"https://remotive.com{link_el.get_attribute('href')}" if link_el else "N/A"
-                
-                # Date
-                date_el = el.query_selector(".job-date")
-                date = date_el.inner_text().strip() if date_el else "N/A"
+        for item in payload.get("jobs", []):
+            tags = item.get("tags") or []
+            jobs.append({
+                "Company": item.get("company_name", "N/A"),
+                "Role": item.get("title", "N/A"),
+                "Location": item.get("candidate_required_location") or "Remote",
+                "Tags": ", ".join(tags),
+                "Apply Link": item.get("url", "N/A"),
+                "Date": item.get("publication_date", ""),
+                "Description": self.strip_html(item.get("description", "")),
+                "Source": "Remotive",
+            })
 
-                jobs.append({
-                    "Company": company,
-                    "Role": role,
-                    "Location": location,
-                    "Tags": ", ".join(tags),
-                    "Apply Link": apply_link,
-                    "Date": date,
-                    "Source": "Remotive"
-                })
-            except Exception as e:
-                logger.error(f"Error parsing a job item in Remotive: {e}")
-                continue
-
+        logger.info(f"Remotive returned {len(jobs)} listings.")
         return jobs

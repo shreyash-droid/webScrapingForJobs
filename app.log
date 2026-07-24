@@ -44,3 +44,343 @@ Call log:
 2026-02-21 00:07:12,212 - job_automation - INFO - Cycle completed successfully.
 2026-02-21 00:07:12,212 - job_automation - INFO - Scheduling daily automation at 10:00
 2026-02-21 00:07:48,680 - job_automation - INFO - Automation stopped by user.
+2026-02-21 00:11:28,663 - job_automation - INFO - ==================================================
+2026-02-21 00:11:28,663 - job_automation - INFO - Starting Job Automation Cycle
+2026-02-21 00:11:28,663 - job_automation - INFO - ==================================================
+2026-02-21 00:11:28,663 - job_automation - INFO - Running scraper: RemoteOK
+2026-02-21 00:11:28,663 - job_automation - INFO - Starting scraper: RemoteOK
+2026-02-21 00:11:29,298 - job_automation - INFO - Navigating to https://remoteok.com/remote-internship-jobs
+2026-02-21 00:11:37,621 - job_automation - INFO - Successfully fetched 17 jobs from RemoteOK
+2026-02-21 00:11:37,621 - job_automation - INFO - Running scraper: Remotive
+2026-02-21 00:11:37,621 - job_automation - INFO - Starting scraper: Remotive
+2026-02-21 00:11:38,218 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/internship
+2026-02-21 00:11:47,930 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-02-21 00:11:47,931 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-02-21 00:11:47,931 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-02-21 00:11:48,506 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search?term=internship
+2026-02-21 00:12:18,508 - job_automation - ERROR - Error during scraping with WeWorkRemotely: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://weworkremotely.com/remote-jobs/search?term=internship", waiting until "networkidle"
+
+2026-02-21 00:12:18,647 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-02-21 00:12:18,652 - job_automation - INFO - Running scraper: Wellfound
+2026-02-21 00:12:18,652 - job_automation - INFO - Starting scraper: Wellfound
+2026-02-21 00:12:19,266 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/internship/remote
+2026-02-21 00:12:28,621 - job_automation - WARNING - No job elements found on Wellfound. Possible bot block or selector change.
+2026-02-21 00:12:28,722 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-02-21 00:12:28,722 - job_automation - INFO - Running scraper: YC Jobs
+2026-02-21 00:12:28,722 - job_automation - INFO - Starting scraper: YC Jobs
+2026-02-21 00:12:29,326 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs?job_type=internship
+2026-02-21 00:12:45,062 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-02-21 00:12:45,062 - job_automation - INFO - Filtering 17 raw listings...
+2026-02-21 00:12:45,062 - job_automation - INFO - Filtered out 16 irrelevant roles. remaining: 1
+2026-02-21 00:12:45,062 - job_automation - INFO - Applying scoring and local deduplication...
+2026-02-21 00:12:45,070 - job_automation - INFO - Sending notifications for top opportunities...
+2026-02-21 00:12:47,255 - job_automation - INFO - Telegram notification sent successfully.
+2026-02-21 00:12:47,256 - job_automation - INFO - Syncing with Google Sheets Tracker...
+2026-02-21 00:12:48,740 - job_automation - INFO - Connected to existing sheet: Internship Tracker
+2026-02-21 00:12:49,181 - job_automation - INFO - No new unique jobs found to append.
+2026-02-21 00:12:49,181 - job_automation - INFO - Cycle completed successfully.
+2026-02-21 00:12:49,181 - job_automation - INFO - Scheduling daily automation at 10:00
+2026-02-21 00:16:59,867 - job_automation - INFO - Automation stopped by user.
+2026-02-24 01:34:01,307 - job_automation - INFO - ==================================================
+2026-02-24 01:34:01,307 - job_automation - INFO - Starting Job Automation Cycle
+2026-02-24 01:34:01,307 - job_automation - INFO - ==================================================
+2026-02-24 01:34:01,310 - job_automation - INFO - Running scraper: RemoteOK
+2026-02-24 01:34:01,310 - job_automation - INFO - Starting scraper: RemoteOK
+2026-02-24 01:34:10,582 - job_automation - INFO - Navigating to https://remoteok.com/remote-internship-jobs
+2026-02-24 01:34:21,560 - job_automation - INFO - Successfully fetched 17 jobs from RemoteOK
+2026-02-24 01:34:21,560 - job_automation - INFO - Running scraper: Remotive
+2026-02-24 01:34:21,560 - job_automation - INFO - Starting scraper: Remotive
+2026-02-24 01:34:22,545 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/internship
+2026-02-24 01:34:35,435 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-02-24 01:34:35,436 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-02-24 01:34:35,436 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-02-24 01:34:36,357 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search?term=internship
+2026-02-24 01:35:06,384 - job_automation - ERROR - Error during scraping with WeWorkRemotely: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://weworkremotely.com/remote-jobs/search?term=internship", waiting until "networkidle"
+
+2026-02-24 01:35:06,588 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-02-24 01:35:06,588 - job_automation - INFO - Running scraper: Wellfound
+2026-02-24 01:35:06,588 - job_automation - INFO - Starting scraper: Wellfound
+2026-02-24 01:35:07,459 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/internship/remote
+2026-02-24 01:35:17,178 - job_automation - WARNING - No job elements found on Wellfound. Possible bot block or selector change.
+2026-02-24 01:35:17,345 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-02-24 01:35:17,348 - job_automation - INFO - Running scraper: YC Jobs
+2026-02-24 01:35:17,348 - job_automation - INFO - Starting scraper: YC Jobs
+2026-02-24 01:35:18,203 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs?job_type=internship
+2026-02-24 01:35:36,975 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-02-24 01:35:36,977 - job_automation - INFO - Running scraper: Indeed
+2026-02-24 01:35:36,978 - job_automation - INFO - Starting scraper: Indeed
+2026-02-24 01:35:37,903 - job_automation - INFO - Navigating to https://www.indeed.com/jobs?q=UI+UX+Product+Frontend+internship&l=Remote&fromage=7
+2026-02-24 01:35:54,875 - job_automation - WARNING - Job cards not found on Indeed. Site might be blocking or selectors changed.
+2026-02-24 01:35:55,078 - job_automation - INFO - Successfully fetched 0 jobs from Indeed
+2026-02-24 01:35:55,078 - job_automation - INFO - Filtering 17 raw listings...
+2026-02-24 01:35:55,114 - job_automation - INFO - Filtered out 16 irrelevant roles. remaining: 1
+2026-02-24 01:35:55,114 - job_automation - INFO - Applying scoring and local deduplication...
+2026-02-24 01:35:55,132 - job_automation - INFO - Sending notifications for top opportunities...
+2026-02-24 01:35:56,333 - job_automation - INFO - Telegram notification sent successfully.
+2026-02-24 01:35:56,337 - job_automation - INFO - Syncing with Google Sheets Tracker...
+2026-02-24 01:36:00,420 - job_automation - INFO - Created new sheet: Internship Tracker
+2026-02-24 01:36:01,241 - job_automation - INFO - Successfully added 1 new unique jobs to Google Sheets.
+2026-02-24 01:36:01,241 - job_automation - INFO - Cycle completed successfully.
+2026-02-24 01:36:01,241 - job_automation - INFO - Scheduling daily automation at 10:00
+2026-02-24 01:36:27,598 - job_automation - INFO - Automation stopped by user.
+2026-05-20 11:43:43,510 - job_automation - INFO - ==================================================
+2026-05-20 11:43:43,510 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-20 11:43:43,510 - job_automation - INFO - ==================================================
+2026-05-20 11:43:43,510 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-20 11:43:43,510 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-20 11:44:33,369 - job_automation - INFO - ==================================================
+2026-05-20 11:44:33,370 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-20 11:44:33,370 - job_automation - INFO - ==================================================
+2026-05-20 11:44:33,370 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-20 11:44:33,370 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-20 11:44:35,195 - job_automation - INFO - Navigating to https://remoteok.com/remote-design-jobs
+2026-05-20 11:45:06,533 - job_automation - INFO - Successfully fetched 100 jobs from RemoteOK
+2026-05-20 11:45:06,533 - job_automation - INFO - Running scraper: Remotive
+2026-05-20 11:45:06,534 - job_automation - INFO - Starting scraper: Remotive
+2026-05-20 11:45:07,236 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/design
+2026-05-20 11:45:37,250 - job_automation - ERROR - Error during scraping with Remotive: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://remotive.com/remote-jobs/design", waiting until "networkidle"
+
+2026-05-20 11:45:37,425 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-05-20 11:45:37,426 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-05-20 11:45:37,426 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-05-20 11:45:38,129 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search
+2026-05-20 11:46:09,466 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-05-20 11:46:09,466 - job_automation - INFO - Running scraper: Wellfound
+2026-05-20 11:46:09,466 - job_automation - INFO - Starting scraper: Wellfound
+2026-05-20 11:46:10,100 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/software-engineer/remote
+2026-05-20 11:46:21,255 - job_automation - WARNING - No job elements found on Wellfound. Possible bot block or selector change.
+2026-05-20 11:46:21,370 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-05-20 11:46:21,370 - job_automation - INFO - Running scraper: YC Jobs
+2026-05-20 11:46:21,370 - job_automation - INFO - Starting scraper: YC Jobs
+2026-05-20 11:46:21,999 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs
+2026-05-20 11:46:46,754 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-05-20 11:46:46,754 - job_automation - INFO - Running scraper: Indeed
+2026-05-20 11:46:46,754 - job_automation - INFO - Starting scraper: Indeed
+2026-05-20 11:46:47,427 - job_automation - INFO - Navigating to https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+2026-05-20 11:46:54,368 - job_automation - INFO - Successfully fetched 16 jobs from Indeed
+2026-05-20 11:46:54,368 - job_automation - INFO - Filtering 116 raw listings...
+2026-05-20 11:46:54,389 - job_automation - INFO - Filtered out 79 irrelevant roles. remaining: 37
+2026-05-20 11:46:54,390 - job_automation - INFO - Applying scoring and local deduplication...
+2026-05-20 11:46:54,400 - job_automation - INFO - Sending notifications for top opportunities...
+2026-05-20 11:46:56,163 - job_automation - INFO - Telegram notification sent successfully.
+2026-05-20 11:46:56,164 - job_automation - INFO - Syncing with Google Sheets Tracker...
+2026-05-20 11:46:58,116 - job_automation - INFO - Connected to existing sheet: Internship Tracker
+2026-05-20 11:46:59,271 - job_automation - INFO - Successfully added 37 new unique jobs to Google Sheets.
+2026-05-20 11:46:59,271 - job_automation - INFO - Cycle completed successfully.
+2026-05-20 11:46:59,271 - job_automation - INFO - Scheduling daily automation at 10:00
+2026-05-20 11:47:07,368 - job_automation - INFO - ==================================================
+2026-05-20 11:47:07,368 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-20 11:47:07,368 - job_automation - INFO - ==================================================
+2026-05-20 11:47:07,368 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-20 11:47:07,369 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-20 11:47:08,052 - job_automation - INFO - Navigating to https://remoteok.com/remote-design-jobs
+2026-05-20 11:47:43,004 - job_automation - INFO - Successfully fetched 100 jobs from RemoteOK
+2026-05-20 11:47:43,004 - job_automation - INFO - Running scraper: Remotive
+2026-05-20 11:47:43,004 - job_automation - INFO - Starting scraper: Remotive
+2026-05-20 11:47:43,691 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/design
+2026-05-20 11:48:13,703 - job_automation - ERROR - Error during scraping with Remotive: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://remotive.com/remote-jobs/design", waiting until "networkidle"
+
+2026-05-20 11:48:13,918 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-05-20 11:48:13,918 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-05-20 11:48:13,919 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-05-20 11:48:14,637 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search
+2026-05-20 11:48:47,095 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-05-20 11:48:47,095 - job_automation - INFO - Running scraper: Wellfound
+2026-05-20 11:48:47,095 - job_automation - INFO - Starting scraper: Wellfound
+2026-05-20 11:48:47,811 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/software-engineer/remote
+2026-05-20 11:48:55,677 - job_automation - WARNING - No job elements found on Wellfound. Possible bot block or selector change.
+2026-05-20 11:48:55,812 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-05-20 11:48:55,812 - job_automation - INFO - Running scraper: YC Jobs
+2026-05-20 11:48:55,812 - job_automation - INFO - Starting scraper: YC Jobs
+2026-05-20 11:48:56,566 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs
+2026-05-20 11:49:15,824 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-05-20 11:49:15,825 - job_automation - INFO - Running scraper: Indeed
+2026-05-20 11:49:15,825 - job_automation - INFO - Starting scraper: Indeed
+2026-05-20 11:49:16,487 - job_automation - INFO - Navigating to https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+2026-05-20 11:49:22,033 - job_automation - INFO - Successfully fetched 16 jobs from Indeed
+2026-05-20 11:49:22,033 - job_automation - INFO - Filtering 116 raw listings...
+2026-05-20 11:49:22,039 - job_automation - INFO - Filtered out 85 irrelevant roles. remaining: 31
+2026-05-20 11:49:22,039 - job_automation - INFO - Applying scoring and local deduplication...
+2026-05-20 11:49:22,045 - job_automation - INFO - Sending notifications for top opportunities...
+2026-05-20 11:49:23,033 - job_automation - INFO - Telegram notification sent successfully.
+2026-05-20 11:49:23,034 - job_automation - INFO - Syncing with Google Sheets Tracker...
+2026-05-20 11:49:24,800 - job_automation - INFO - Connected to existing sheet: Internship Tracker
+2026-05-20 11:49:25,810 - job_automation - INFO - Successfully added 10 new unique jobs to Google Sheets.
+2026-05-20 11:49:25,811 - job_automation - INFO - Cycle completed successfully.
+2026-05-20 11:49:25,811 - job_automation - INFO - Scheduling daily automation at 10:00
+2026-05-20 13:28:53,297 - job_automation - INFO - Automation stopped by user.
+2026-05-21 21:39:41,125 - job_automation - INFO - ==================================================
+2026-05-21 21:39:41,181 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-21 21:39:41,182 - job_automation - INFO - ==================================================
+2026-05-21 21:39:41,189 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-21 21:39:41,198 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-21 21:40:00,369 - job_automation - INFO - Navigating to https://remoteok.com/remote-design-jobs
+2026-05-21 21:40:03,091 - job_automation - ERROR - Error during scraping with RemoteOK: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://remoteok.com/remote-design-jobs
+Call log:
+  - navigating to "https://remoteok.com/remote-design-jobs", waiting until "networkidle"
+
+2026-05-21 21:40:03,301 - job_automation - INFO - Successfully fetched 0 jobs from RemoteOK
+2026-05-21 21:40:03,301 - job_automation - INFO - Running scraper: Remotive
+2026-05-21 21:40:03,302 - job_automation - INFO - Starting scraper: Remotive
+2026-05-21 21:40:04,082 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/design
+2026-05-21 21:40:04,151 - job_automation - ERROR - Error during scraping with Remotive: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://remotive.com/remote-jobs/design
+Call log:
+  - navigating to "https://remotive.com/remote-jobs/design", waiting until "networkidle"
+
+2026-05-21 21:40:04,308 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-05-21 21:40:04,308 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-05-21 21:40:04,308 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-05-21 21:40:05,111 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search
+2026-05-21 21:40:05,210 - job_automation - ERROR - Error during scraping with WeWorkRemotely: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://weworkremotely.com/remote-jobs/search
+Call log:
+  - navigating to "https://weworkremotely.com/remote-jobs/search", waiting until "networkidle"
+
+2026-05-21 21:40:05,400 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-05-21 21:40:05,400 - job_automation - INFO - Running scraper: Wellfound
+2026-05-21 21:40:05,401 - job_automation - INFO - Starting scraper: Wellfound
+2026-05-21 21:40:06,403 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/software-engineer/remote
+2026-05-21 21:40:06,520 - job_automation - ERROR - Critical error on Wellfound: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.wellfound.com/role/l/software-engineer/remote
+Call log:
+  - navigating to "https://www.wellfound.com/role/l/software-engineer/remote", waiting until "domcontentloaded"
+
+2026-05-21 21:40:06,780 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-05-21 21:40:06,780 - job_automation - INFO - Running scraper: YC Jobs
+2026-05-21 21:40:06,781 - job_automation - INFO - Starting scraper: YC Jobs
+2026-05-21 21:40:07,811 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs
+2026-05-21 21:40:07,899 - job_automation - ERROR - Critical error on YC Jobs: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.workatastartup.com/jobs
+Call log:
+  - navigating to "https://www.workatastartup.com/jobs", waiting until "networkidle"
+
+2026-05-21 21:40:08,060 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-05-21 21:40:08,060 - job_automation - INFO - Running scraper: Indeed
+2026-05-21 21:40:08,061 - job_automation - INFO - Starting scraper: Indeed
+2026-05-21 21:40:09,275 - job_automation - INFO - Navigating to https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+2026-05-21 21:40:09,440 - job_automation - ERROR - Error during scraping with Indeed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+Call log:
+  - navigating to "https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3", waiting until "domcontentloaded"
+
+2026-05-21 21:40:09,749 - job_automation - INFO - Successfully fetched 0 jobs from Indeed
+2026-05-21 21:40:09,749 - job_automation - WARNING - No jobs found in this cycle. Skipping processing.
+2026-05-22 22:37:44,607 - job_automation - INFO - ==================================================
+2026-05-22 22:37:44,736 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-22 22:37:44,738 - job_automation - INFO - ==================================================
+2026-05-22 22:37:44,749 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-22 22:37:44,765 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-22 22:38:06,690 - job_automation - INFO - Navigating to https://remoteok.com/remote-design-jobs
+2026-05-22 22:38:09,401 - job_automation - ERROR - Error during scraping with RemoteOK: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://remoteok.com/remote-design-jobs
+Call log:
+  - navigating to "https://remoteok.com/remote-design-jobs", waiting until "networkidle"
+
+2026-05-22 22:38:10,520 - job_automation - INFO - Successfully fetched 0 jobs from RemoteOK
+2026-05-22 22:38:10,520 - job_automation - INFO - Running scraper: Remotive
+2026-05-22 22:38:10,521 - job_automation - INFO - Starting scraper: Remotive
+2026-05-22 22:38:11,438 - job_automation - INFO - Navigating to https://remotive.com/remote-jobs/design
+2026-05-22 22:38:11,515 - job_automation - ERROR - Error during scraping with Remotive: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://remotive.com/remote-jobs/design
+Call log:
+  - navigating to "https://remotive.com/remote-jobs/design", waiting until "networkidle"
+
+2026-05-22 22:38:11,694 - job_automation - INFO - Successfully fetched 0 jobs from Remotive
+2026-05-22 22:38:11,695 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-05-22 22:38:11,695 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-05-22 22:38:12,573 - job_automation - INFO - Navigating to https://weworkremotely.com/remote-jobs/search
+2026-05-22 22:38:12,673 - job_automation - ERROR - Error during scraping with WeWorkRemotely: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://weworkremotely.com/remote-jobs/search
+Call log:
+  - navigating to "https://weworkremotely.com/remote-jobs/search", waiting until "networkidle"
+
+2026-05-22 22:38:12,886 - job_automation - INFO - Successfully fetched 0 jobs from WeWorkRemotely
+2026-05-22 22:38:12,887 - job_automation - INFO - Running scraper: Wellfound
+2026-05-22 22:38:12,887 - job_automation - INFO - Starting scraper: Wellfound
+2026-05-22 22:38:13,860 - job_automation - INFO - Navigating to https://www.wellfound.com/role/l/software-engineer/remote
+2026-05-22 22:38:13,923 - job_automation - ERROR - Critical error on Wellfound: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.wellfound.com/role/l/software-engineer/remote
+Call log:
+  - navigating to "https://www.wellfound.com/role/l/software-engineer/remote", waiting until "domcontentloaded"
+
+2026-05-22 22:38:14,111 - job_automation - INFO - Successfully fetched 0 jobs from Wellfound
+2026-05-22 22:38:14,111 - job_automation - INFO - Running scraper: YC Jobs
+2026-05-22 22:38:14,111 - job_automation - INFO - Starting scraper: YC Jobs
+2026-05-22 22:38:14,877 - job_automation - INFO - Navigating to https://www.workatastartup.com/jobs
+2026-05-22 22:38:14,929 - job_automation - ERROR - Critical error on YC Jobs: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.workatastartup.com/jobs
+Call log:
+  - navigating to "https://www.workatastartup.com/jobs", waiting until "networkidle"
+
+2026-05-22 22:38:15,083 - job_automation - INFO - Successfully fetched 0 jobs from YC Jobs
+2026-05-22 22:38:15,084 - job_automation - INFO - Running scraper: Indeed
+2026-05-22 22:38:15,084 - job_automation - INFO - Starting scraper: Indeed
+2026-05-22 22:38:15,926 - job_automation - INFO - Navigating to https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+2026-05-22 22:38:15,971 - job_automation - ERROR - Error during scraping with Indeed: Page.goto: net::ERR_INTERNET_DISCONNECTED at https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3
+Call log:
+  - navigating to "https://www.indeed.com/jobs?q=Product+Design+UI+UX+Frontend+Product+Manager&l=Remote&fromage=3", waiting until "domcontentloaded"
+
+2026-05-22 22:38:16,138 - job_automation - INFO - Successfully fetched 0 jobs from Indeed
+2026-05-22 22:38:16,138 - job_automation - WARNING - No jobs found in this cycle. Skipping processing.
+2026-05-25 10:18:55,860 - job_automation - INFO - ==================================================
+2026-05-25 10:18:55,863 - job_automation - INFO - Starting Job Automation Cycle
+2026-05-25 10:18:55,864 - job_automation - INFO - ==================================================
+2026-05-25 10:18:55,865 - job_automation - INFO - Running scraper: RemoteOK
+2026-05-25 10:18:55,865 - job_automation - INFO - Starting scraper: RemoteOK
+2026-05-25 11:38:45,694 - job_automation - INFO - Navigating to https://remoteok.com/remote-design-jobs
+2026-07-24 22:11:27,697 - job_automation - INFO - Starting scraper: RemoteOK
+2026-07-24 22:11:27,697 - job_automation - INFO - Fetching https://remoteok.com/api
+2026-07-24 22:11:30,628 - job_automation - INFO - RemoteOK returned 100 listings.
+2026-07-24 22:11:30,628 - job_automation - INFO - Starting scraper: Remotive
+2026-07-24 22:11:30,628 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=design&limit=100
+2026-07-24 22:11:31,581 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=software-dev&limit=100
+2026-07-24 22:11:36,966 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=product&limit=100
+2026-07-24 22:11:37,796 - job_automation - INFO - Remotive returned 105 listings.
+2026-07-24 22:11:37,796 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-07-24 22:11:37,796 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-design-jobs.rss
+2026-07-24 22:11:38,264 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss
+2026-07-24 22:11:38,873 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-product-jobs.rss
+2026-07-24 22:11:42,262 - job_automation - INFO - WeWorkRemotely returned 122 listings.
+2026-07-24 22:11:42,331 - job_automation - INFO - Filtered out 302 irrelevant roles. remaining: 25
+2026-07-24 22:12:10,316 - job_automation - INFO - Starting scraper: RemoteOK
+2026-07-24 22:12:10,317 - job_automation - INFO - Fetching https://remoteok.com/api
+2026-07-24 22:12:13,538 - job_automation - INFO - RemoteOK returned 100 listings.
+2026-07-24 22:12:13,539 - job_automation - INFO - Starting scraper: Remotive
+2026-07-24 22:12:13,540 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=design&limit=100
+2026-07-24 22:12:14,378 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=software-dev&limit=100
+2026-07-24 22:12:14,826 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=product&limit=100
+2026-07-24 22:12:14,988 - job_automation - INFO - Remotive returned 105 listings.
+2026-07-24 22:12:36,681 - job_automation - INFO - Starting scraper: Remotive
+2026-07-24 22:12:36,681 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=design&limit=100
+2026-07-24 22:12:38,229 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=software-dev&limit=100
+2026-07-24 22:12:41,237 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs?category=product&limit=100
+2026-07-24 22:12:41,629 - job_automation - INFO - Remotive returned 105 listings.
+2026-07-24 22:15:46,969 - job_automation - INFO - Starting scraper: RemoteOK
+2026-07-24 22:15:46,969 - job_automation - INFO - Fetching https://remoteok.com/api
+2026-07-24 22:15:48,908 - job_automation - INFO - RemoteOK returned 100 listings.
+2026-07-24 22:15:48,908 - job_automation - INFO - Starting scraper: Remotive
+2026-07-24 22:15:48,908 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs
+2026-07-24 22:15:49,450 - job_automation - INFO - Remotive returned 35 listings.
+2026-07-24 22:15:49,455 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-07-24 22:15:49,455 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-design-jobs.rss
+2026-07-24 22:15:50,766 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss
+2026-07-24 22:15:52,932 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-product-jobs.rss
+2026-07-24 22:15:55,210 - job_automation - INFO - WeWorkRemotely returned 122 listings.
+2026-07-24 22:15:55,266 - job_automation - INFO - Filtered out 239 irrelevant roles. remaining: 18
+2026-07-24 22:20:08,323 - job_automation - INFO - Running scraper: RemoteOK
+2026-07-24 22:20:08,323 - job_automation - INFO - Starting scraper: RemoteOK
+2026-07-24 22:20:08,323 - job_automation - INFO - Fetching https://remoteok.com/api
+2026-07-24 22:20:10,216 - job_automation - INFO - RemoteOK returned 100 listings.
+2026-07-24 22:20:10,216 - job_automation - INFO - Successfully fetched 100 jobs from RemoteOK
+2026-07-24 22:20:10,216 - job_automation - INFO - Running scraper: Remotive
+2026-07-24 22:20:10,216 - job_automation - INFO - Starting scraper: Remotive
+2026-07-24 22:20:10,216 - job_automation - INFO - Fetching https://remotive.com/api/remote-jobs
+2026-07-24 22:20:12,464 - job_automation - INFO - Remotive returned 35 listings.
+2026-07-24 22:20:12,469 - job_automation - INFO - Successfully fetched 35 jobs from Remotive
+2026-07-24 22:20:12,469 - job_automation - INFO - Running scraper: WeWorkRemotely
+2026-07-24 22:20:12,469 - job_automation - INFO - Starting scraper: WeWorkRemotely
+2026-07-24 22:20:12,469 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-design-jobs.rss
+2026-07-24 22:20:14,512 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss
+2026-07-24 22:20:15,108 - job_automation - INFO - Fetching https://weworkremotely.com/categories/remote-product-jobs.rss
+2026-07-24 22:20:18,275 - job_automation - INFO - WeWorkRemotely returned 122 listings.
+2026-07-24 22:20:18,275 - job_automation - INFO - Successfully fetched 122 jobs from WeWorkRemotely
+2026-07-24 22:20:18,330 - job_automation - INFO - Filtered out 239 irrelevant roles. remaining: 18

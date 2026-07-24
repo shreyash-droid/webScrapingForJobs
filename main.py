@@ -11,13 +11,10 @@ from utils.filter import job_filter
 from utils.scoring import job_scorer
 from utils.notifier import notifier
 
-# Scrapers
+# Scrapers (API / RSS based)
 from scraper.remoteok import RemoteOKScraper
 from scraper.remotive import RemotiveScraper
 from scraper.weworkremotely import WeWorkRemotelyScraper
-from scraper.wellfound import WellfoundScraper
-from scraper.yc_jobs import YCJobsScraper
-from scraper.indeed import IndeedScraper
 from scraper.base_scraper import BaseScraper
 
 class JobAutomationOrchestrator:
@@ -31,9 +28,6 @@ class JobAutomationOrchestrator:
             RemoteOKScraper(),
             RemotiveScraper(),
             WeWorkRemotelyScraper(),
-            WellfoundScraper(),
-            YCJobsScraper(),
-            IndeedScraper()
         ]
 
     def run_cycle(self):

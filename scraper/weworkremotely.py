@@ -1,62 +1,47 @@
-import time
+import xml.etree.ElementTree as ET
+
 from scraper.base_scraper import BaseScraper
 from utils.logger import logger
+from config.settings import settings
+
 
 class WeWorkRemotelyScraper(BaseScraper):
+    """Pulls jobs from We Work Remotely category RSS feeds (no HTML scraping needed)."""
+
     def __init__(self):
         super().__init__("WeWorkRemotely")
-        self.base_url = "https://weworkremotely.com/remote-jobs/search?term=internship"
+        self.feed_base = "https://weworkremotely.com/categories"
 
-    def scrape(self, page):
-        logger.info(f"Navigating to {self.base_url}")
-        page.goto(self.base_url, wait_until="networkidle")
-        
-        time.sleep(2)
-        
+    def scrape(self):
         jobs = []
-        # WWR jobs are in list items <li> within a section
-        job_elements = page.query_selector_all("section.jobs article ul li:not(.view-all)")
-        
-        for el in job_elements:
+        for slug in settings.WWR_FEEDS:
+            url = f"{self.feed_base}/{slug}.rss"
+            logger.info(f"Fetching {url}")
             try:
-                # Some <li> might be headers or dividers
-                if not el.query_selector(".title"):
-                    continue
-                    
-                role_el = el.query_selector(".title")
-                role = role_el.inner_text().strip() if role_el else "N/A"
-                
-                company_el = el.query_selector(".company")
-                company = company_el.inner_text().strip() if company_el else "N/A"
-                
-                region_el = el.query_selector(".region")
-                location = region_el.inner_text().strip() if region_el else "Remote"
-                
-                # Apply link
-                link_els = el.query_selector_all("a")
-                # Usually there are two links, one for the whole item
-                apply_link = "N/A"
-                for link in link_els:
-                    href = link.get_attribute("href")
-                    if href and "/remote-jobs/" in href:
-                        apply_link = f"https://weworkremotely.com{href}"
-                        break
-                
-                # Date
-                date_el = el.query_selector("time")
-                date = date_el.get_attribute("datetime") if date_el else "N/A"
-
-                jobs.append({
-                    "Company": company,
-                    "Role": role,
-                    "Location": location,
-                    "Tags": "Internship", # Fixed tag based on search
-                    "Apply Link": apply_link,
-                    "Date": date,
-                    "Source": "WeWorkRemotely"
-                })
+                content = self.fetch(url).content
+                root = ET.fromstring(content)
             except Exception as e:
-                logger.error(f"Error parsing a job item in WeWorkRemotely: {e}")
+                logger.error(f"WWR feed '{slug}' failed: {e}")
                 continue
 
+            for item in root.iter("item"):
+                title_raw = (item.findtext("title") or "").strip()
+                # WWR titles are formatted "Company: Role Title".
+                if ":" in title_raw:
+                    company, role = [p.strip() for p in title_raw.split(":", 1)]
+                else:
+                    company, role = "N/A", title_raw
+
+                jobs.append({
+                    "Company": company or "N/A",
+                    "Role": role or "N/A",
+                    "Location": (item.findtext("region") or "Remote").strip(),
+                    "Tags": (item.findtext("category") or "").strip(),
+                    "Apply Link": (item.findtext("link") or "N/A").strip(),
+                    "Date": (item.findtext("pubDate") or "").strip(),
+                    "Description": self.strip_html(item.findtext("description") or ""),
+                    "Source": "WeWorkRemotely",
+                })
+
+        logger.info(f"WeWorkRemotely returned {len(jobs)} listings.")
         return jobs

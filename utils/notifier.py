@@ -8,29 +8,26 @@ class TelegramNotifier:
         self.chat_id = settings.TELEGRAM_CHAT_ID
         self.base_url = f"https://api.telegram.org/bot{self.token}/sendMessage"
 
-    def send_notification(self, df):
-        """
-        Sends a notification with the top 5 high-priority jobs.
-        """
+    def send_notification(self, df, top_n=10):
+        """Sends a notification with the top-N highest-scoring job matches."""
         if not self.token or not self.chat_id:
             logger.warning("Telegram credentials not set. Skipping notification.")
             return
 
-        # Get top 10 high-priority jobs
-        top_jobs = df.head(10)
-        
+        top_jobs = df.head(top_n)
+
         if top_jobs.empty:
             logger.info("No jobs to notify.")
             return
 
-        message = "🚀 *New High-Priority Internships Found!*\n\n"
-        
+        message = f"🚀 *Top {len(top_jobs)} Job Matches Found!*\n\n"
+
         for _, row in top_jobs.iterrows():
             company = row.get('Company', 'N/A')
             role = row.get('Role', 'N/A')
             link = row.get('Apply Link', '#')
             priority = row.get('Priority', 'N/A')
-            
+
             message += f"🏢 *{company}*\n"
             message += f"💼 {role}\n"
             message += f"🔗 [Apply Here]({link})\n"
